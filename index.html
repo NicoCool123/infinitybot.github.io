@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bot Dashboard</title>
+</head>
+<body>
+    <h1>Bot Dashboard</h1>
+    <form id="messageForm">
+        <input type="text" id="message" placeholder="Nachricht eingeben" required>
+        <button type="submit">Nachricht senden</button>
+    </form>
+    <script>
+        document.getElementById('messageForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const message = document.getElementById('message').value;
+
+            const response = await fetch('/send_message', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ content: message })
+            });
+
+            const result = await response.json();
+            alert(result.message || result.data.content);
+        });
+    </script>
+</body>
+</html>
