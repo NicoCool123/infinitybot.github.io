@@ -4,8 +4,8 @@ import requests
 
 app = Flask(__name__)
 
-DISCORD_BOT_TOKEN = 'DEIN_DISCORD_BOT_TOKEN'
-CHANNEL_ID = 'DEIN_CHANNEL_ID'  # ID des Discord-Kanals
+DISCORD_BOT_TOKEN = 'MTI4ODc2NzAyMDU0Mzc3NDcyMA.GkySIp.o2_6goRltN0HKUe_WR8Y6PvlI2IIyO3R_elfC4'
+CHANNEL_ID = '1288921771382280263'  # ID des Discord-Kanals
 
 @app.route('/')
 def home():
